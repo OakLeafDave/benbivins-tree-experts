@@ -5,8 +5,8 @@ backend:
 media_folder: "src/assets/img"
 public_folder: "/assets/img"
 
-site_url: https://ben-bivins-tree-experts.netlify.app
-display_url: https://ben-bivins-tree-experts.netlify.app
+site_url: https://ben-bivens.netlify.app
+display_url: https://ben-bivens.netlify.app
 
 collections:
   - name: "settings"
