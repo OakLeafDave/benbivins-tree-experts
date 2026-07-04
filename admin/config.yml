@@ -1,0 +1,87 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/img"
+public_folder: "/assets/img"
+
+site_url: https://ben-bivins-tree-experts.netlify.app
+display_url: https://ben-bivins-tree-experts.netlify.app
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "site"
+        label: "Business Info (phone, address, hours)"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Business name", name: "name", widget: "string" }
+          - { label: "Phone (display)", name: "phone", widget: "string", hint: "e.g. 609-698-4992" }
+          - { label: "Phone (dial link)", name: "phoneHref", widget: "string", hint: "e.g. +16096984992 — digits with +1" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Hours", name: "hours", widget: "string" }
+          - { label: "Review count blurb", name: "reviewCount", widget: "string", hint: "e.g. 60+" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+      - name: "homepage"
+        label: "Homepage Content"
+        file: "src/_data/homepage.json"
+        fields:
+          - { label: "Hero eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero headline — line 1", name: "heroHeadlineTop", widget: "string" }
+          - { label: "Hero headline — line 2", name: "heroHeadlineBottom", widget: "string" }
+          - { label: "Hero subheadline", name: "heroSubhead", widget: "text" }
+          - { label: "Hero background image", name: "heroImage", widget: "image", media_library: { config: { multiple: false } } }
+          - { label: "Why-choose-us headline", name: "whyHeadline", widget: "string" }
+          - { label: "Why-choose-us paragraph", name: "whyBody", widget: "text" }
+          - { label: "Why-choose-us image", name: "whyImage", widget: "image" }
+
+  - name: "posts"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}}"
+    sortable_fields: ["title", "date"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", required: false, date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Featured image", name: "image", widget: "image", required: false }
+      - { label: "Short summary", name: "summary", widget: "text", required: false, hint: "Shown on the blog listing page" }
+      - { label: "SEO description", name: "description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "service-areas"
+    label: "Service Area Pages"
+    label_singular: "Service Area"
+    folder: "src/service-areas"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Featured image", name: "image", widget: "image", required: false }
+      - { label: "Short summary", name: "summary", widget: "text", required: false }
+      - { label: "SEO description", name: "description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Site Pages"
+    label_singular: "Page"
+    folder: "src/pages"
+    create: false
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "SEO description", name: "description", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

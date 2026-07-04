@@ -1,0 +1,28 @@
+---
+layout: base.njk
+---
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumb"><a href="/index.html">Home</a> <span>›</span> {{ title }}</nav>
+    <h1>{{ title }}</h1>
+  </div>
+</section>
+<main class="page-main">
+  <div class="container page-wrap">
+    <article class="prose">
+      {{ content | safe }}
+    </article>
+  </div>
+</main>
+<section class="cta-band">
+  <div class="container cta-band__inner">
+    <div>
+      <h2>Ready for a Free Estimate?</h2>
+      <p>Call {{ site.name }} today — fast, honest quotes across Ocean &amp; Monmouth County.</p>
+    </div>
+    <div class="cta-band__actions">
+      <a href="tel:{{ site.phoneHref }}" class="btn btn--lg btn--ghost">📞 {{ site.phone }}</a>
+      <a href="/contact-us.html" class="btn btn--lg btn--accent">Get a Free Quote</a>
+    </div>
+  </div>
+</section>

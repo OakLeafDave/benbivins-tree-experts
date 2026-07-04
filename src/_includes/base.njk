@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ title }} | {{ site.name }}</title>
+<meta name="description" content="{{ description }}" />
+<link rel="icon" href="/assets/img/favicon-32.jpg" sizes="32x32" />
+<link rel="apple-touch-icon" href="/assets/img/favicon-180.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body class="{{ bodyClass }}">
+
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__left">
+      <span class="topbar__item">📍 {{ site.address }}</span>
+      <span class="topbar__sep">•</span>
+      <span class="topbar__item">Licensed &amp; Insured</span>
+    </div>
+    <div class="topbar__right">
+      <span class="topbar__item topbar__stars">★★★★★ <span>{{ site.reviewCount }} Five-Star Reviews</span></span>
+      <a href="tel:{{ site.phoneHref }}" class="topbar__phone">📞 {{ site.phone }}</a>
+    </div>
+  </div>
+</div>
+
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a href="/index.html" class="header__logo" aria-label="{{ site.name }} home">
+      <img src="/assets/img/ben-bivins-logo.svg" alt="{{ site.name }} logo" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="/index.html">Home</a>
+      <div class="nav__item nav__item--drop">
+        <a href="/tree-service.html" class="nav__top">Services ▾</a>
+        <div class="dropdown">
+          <a href="/ocean-county-tree-removal.html">Tree Removal</a>
+          <a href="/ocean-county-emergency-tree-service.html">Emergency Tree Service</a>
+          <a href="/tree-care-ocean-county.html">Pruning, Trimming &amp; Crown Reduction</a>
+          <a href="/firewood-in-ocean-county.html">Firewood</a>
+        </div>
+      </div>
+      <div class="nav__item nav__item--drop">
+        <a href="/about-us.html" class="nav__top">About Us ▾</a>
+        <div class="dropdown">
+          <a href="/why-choose-us.html">Why Choose Us</a>
+          <a href="/licensed-and-insured-tree-service-company-nj.html">Licensed and Insured</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/job-opportunities.html">Job Opportunities</a>
+          <a href="/testimonials.html">Testimonials</a>
+        </div>
+      </div>
+      <a href="/service-areas.html">Service Areas</a>
+      <a href="/blog.html">Blog</a>
+      <a href="tel:{{ site.phoneHref }}" class="nav__phone">{{ site.phone }}</a>
+      <a href="/contact-us.html" class="btn btn--accent nav__cta">Get a Free Quote</a>
+    </nav>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="/assets/img/ben-bivins-logo.svg" alt="{{ site.name }}" />
+      <p>Expert tree removal, trimming, and plant health care serving Ocean &amp; Monmouth County, New Jersey.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Services</h4>
+      <a href="/ocean-county-tree-removal.html">Tree Removal</a>
+      <a href="/ocean-county-emergency-tree-service.html">Emergency Service</a>
+      <a href="/tree-care-ocean-county.html">Pruning &amp; Trimming</a>
+      <a href="/firewood-in-ocean-county.html">Firewood</a>
+      <a href="/tree-service.html">All Services</a>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <a href="/about-us.html">About Us</a>
+      <a href="/why-choose-us.html">Why Choose Us</a>
+      <a href="/testimonials.html">Testimonials</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/blog.html">Blog</a>
+    </div>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+      <span>{{ site.address }}</span>
+      <a href="/service-areas.html">Service Areas</a>
+      <span>Licensed &amp; Insured</span>
+    </div>
+  </div>
+  <div class="footer__bar">
+    <div class="container footer__bar-inner">
+      <span>© <span id="year"></span> {{ site.name }}. All rights reserved.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/script.js"></script>
+</body>
+</html>

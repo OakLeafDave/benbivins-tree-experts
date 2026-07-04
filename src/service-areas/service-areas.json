@@ -1,0 +1,1 @@
+{ "layout": "serviceArea.njk", "permalink": "/{{ page.fileSlug }}.html" }

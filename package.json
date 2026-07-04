@@ -1,0 +1,12 @@
+{
+  "name": "benbivins-tree-experts",
+  "version": "1.0.0",
+  "description": "Ben Bivins Tree Experts website — Eleventy + Decap CMS",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve --port=8430"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.1"
+  }
+}
