@@ -1,0 +1,23 @@
+{% set v = vUrl | videoData %}
+<section class="section video-section{{ ' section--alt' if vAlt }}">
+  <div class="container video-block{{ ' video-block--flip' if vFlip }}">
+    <div class="video-block__text">
+      <span class="eyebrow">Watch</span>
+      <h2>{{ vHeading }}</h2>
+      <p>{{ vText }}</p>
+      <a href="/contact-us.html" class="btn btn--primary">Get a Free Quote</a>
+    </div>
+    {% if v %}
+    <div class="video-embed" data-src="{{ v.src }}" role="button" tabindex="0" aria-label="Play video: {{ vHeading }}">
+      <img class="video-embed__poster" src="{{ ('/' + vThumb) if vThumb else v.poster }}" alt="{{ vHeading }}" loading="lazy" />
+      <span class="video-embed__play" aria-hidden="true"></span>
+    </div>
+    {% else %}
+    <div class="video-embed video-embed--soon" aria-label="Video coming soon">
+      <img class="video-embed__poster" src="/{{ vThumb }}" alt="{{ vHeading }}" loading="lazy" />
+      <span class="video-embed__play" aria-hidden="true"></span>
+      <span class="video-embed__soon">Video coming soon</span>
+    </div>
+    {% endif %}
+  </div>
+</section>

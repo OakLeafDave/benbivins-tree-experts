@@ -15,6 +15,23 @@ module.exports = function (eleventyConfig) {
     )
   );
 
+  // Parse a YouTube/Vimeo URL into embed data (null if unrecognized)
+  eleventyConfig.addFilter("videoData", (url) => {
+    if (!url) return null;
+    let m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/);
+    if (m) return {
+      provider: "youtube", id: m[1],
+      poster: `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`,
+      src: `https://www.youtube-nocookie.com/embed/${m[1]}?autoplay=1&rel=0`,
+    };
+    m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+    if (m) return {
+      provider: "vimeo", id: m[1], poster: "",
+      src: `https://player.vimeo.com/video/${m[1]}?autoplay=1`,
+    };
+    return null;
+  });
+
   // Readable date filter
   eleventyConfig.addFilter("readableDate", (d) => {
     if (!d) return "";

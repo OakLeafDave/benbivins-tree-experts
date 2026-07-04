@@ -18,11 +18,21 @@ if (toggle && nav) {
 const yr = document.getElementById('year');
 if (yr) yr.textContent = new Date().getFullYear();
 
-// Demo quote form
-function handleQuote(e) {
-  e.preventDefault();
-  const note = document.getElementById('formNote');
-  if (note) note.hidden = false;
-  e.target.querySelector('button[type="submit"]').textContent = 'Request Sent ✔';
-  return false;
-}
+// Click-to-load video embeds (keeps the page fast until played)
+document.querySelectorAll('.video-embed[data-src]').forEach((el) => {
+  const load = () => {
+    const src = el.getAttribute('data-src');
+    if (!src || el.classList.contains('is-playing')) return;
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', src);
+    iframe.setAttribute('title', 'Video');
+    iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
+    iframe.setAttribute('allowfullscreen', '');
+    el.appendChild(iframe);
+    el.classList.add('is-playing');
+  };
+  el.addEventListener('click', load);
+  el.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); }
+  });
+});

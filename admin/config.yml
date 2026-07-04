@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "src/assets/img"
-public_folder: "/assets/img"
+public_folder: "assets/img"
 
 site_url: https://ben-bivens.netlify.app
 display_url: https://ben-bivens.netlify.app
@@ -38,6 +38,10 @@ collections:
           - { label: "Why-choose-us headline", name: "whyHeadline", widget: "string" }
           - { label: "Why-choose-us paragraph", name: "whyBody", widget: "text" }
           - { label: "Why-choose-us image", name: "whyImage", widget: "image" }
+          - { label: "Video section — heading", name: "videoHeading", widget: "string" }
+          - { label: "Video section — text", name: "videoText", widget: "text" }
+          - { label: "Video URL (YouTube or Vimeo)", name: "videoUrl", widget: "string", required: false, hint: "Paste the client's YouTube or Vimeo link. Leave blank to show 'Video coming soon'." }
+          - { label: "Video thumbnail image", name: "videoThumb", widget: "image", required: false, hint: "Poster shown before the video plays (used for Vimeo or the coming-soon state)." }
 
   - name: "posts"
     label: "Blog Posts"

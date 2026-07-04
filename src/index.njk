@@ -103,6 +103,14 @@ permalink: /index.html
   </div>
 </section>
 
+{% set vHeading = homepage.videoHeading %}
+{% set vText = homepage.videoText %}
+{% set vUrl = homepage.videoUrl %}
+{% set vThumb = homepage.videoThumb %}
+{% set vFlip = false %}
+{% set vAlt = true %}
+{% include "videoblock.njk" %}
+
 <section class="section section--dark" id="areas">
   <div class="container">
     <div class="section__head section__head--light">
